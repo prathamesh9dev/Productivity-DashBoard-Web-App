@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productivity Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>📌 Login to Track Study Time</h2>
+        <input type="text" id="username" placeholder="Enter your name">
+        <button id="login-btn">Login</button>
+    </div>
+
+    <div class="container" style="display: none;">
+        <header>
+            <h1>🚀 Welcome, <span id="user-name"></span></h1>
+            <button id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </header>
+
+        <section class="dashboard">
+            <h2>📊 Productivity Dashboard</h2>
+            <p><strong>Total Study Time:</strong> <span id="study-time">0</span> min</p>
+            <canvas id="studyChart"></canvas>
+        </section>
+
+        <section class="task-section">
+            <h2>📋 Task Manager</h2>
+            <div class="task-input">
+                <input type="text" id="task-input" placeholder="Enter a new task">
+                <select id="task-priority">
+                    <option value="High">🔥 High</option>
+                    <option value="Medium">⚡ Medium</option>
+                    <option value="Low">✅ Low</option>
+                </select>
+                <input type="date" id="task-deadline">
+                <button id="add-task"><i class="fas fa-plus"></i> Add Task</button>
+            </div>
+            <ul id="task-list"></ul>
+        </section>
+
+        <section class="completed-section">
+            <h2>✅ Completed Tasks</h2>
+            <ul id="completed-task-list"></ul>
+        </section>
+
+        <section class="pomodoro-section">
+            <h2>⏳ Pomodoro Timer</h2>
+            <input type="number" id="custom-time" placeholder="Set Minutes">
+            <button id="set-time">Set Timer</button>
+            <div id="timer">00:00</div>
+            <div class="pomodoro-buttons">
+                <button id="start-timer" disabled><i class="fas fa-play"></i> Start</button>
+                <button id="reset-timer"><i class="fas fa-redo"></i> Reset</button>
+            </div>
+        </section>
+
+        <section class="stats-section">
+            <h2>📊 Task Completion Statistics</h2>
+            <canvas id="taskChart"></canvas>
+        </section>
+    </div>
+</body>
+</html>
